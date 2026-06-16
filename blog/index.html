@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Блог | ProFreza24</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<div id="app-header"></div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div id="breadcrumbs"></div>
+    <h1 class="page-hero__title">Блог</h1>
+    <p class="page-hero__sub">Статьи о фрезеровке, лазерной резке и производственных технологиях</p>
+  </div>
+</section>
+
+<!-- EMPTY STATE -->
+<section class="section">
+  <div class="container">
+    <div class="empty-state">
+      <span class="material-icons" style="font-size:80px;">article</span>
+      <h2 class="h3" style="margin-top:var(--sp-4);">Блог в разработке</h2>
+      <p class="body1" style="color:var(--on-surface-2);margin-top:var(--sp-2);max-width:480px;margin-left:auto;margin-right:auto;">Скоро здесь появятся полезные статьи о технологиях обработки материалов и производственных процессах.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PLACEHOLDER ARTICLES -->
+<section class="section section--surface">
+  <div class="container">
+    <div class="section__header">
+      <p class="overline"><span class="material-icons icon-xs">article</span> Скоро в блоге</p>
+      <h2 class="section__title">Предстоящие статьи</h2>
+    </div>
+    <div class="portfolio-grid">
+      <div class="card fade-up">
+        <div class="card__media">
+          <span class="material-icons">settings</span>
+        </div>
+        <div class="card__content">
+          <div class="card__overline"><span class="material-icons icon-xs">settings</span> Фрезеровка</div>
+          <h3 class="card__title">Как выбрать материал для ЧПУ-фрезеровки</h3>
+          <p class="card__desc">Обзор основных материалов для фрезеровки на ЧПУ: дерево, пластик, металл. Сравнение характеристик и областей применения.</p>
+          <div style="margin-top:var(--sp-3);display:flex;align-items:center;gap:var(--sp-2);">
+            <span class="material-icons icon-xs" style="color:var(--on-surface-3);">calendar_today</span>
+            <span class="caption">Скоро</span>
+          </div>
+        </div>
+      </div>
+      <div class="card fade-up">
+        <div class="card__media">
+          <span class="material-icons">bolt</span>
+        </div>
+        <div class="card__content">
+          <div class="card__overline"><span class="material-icons icon-xs">bolt</span> Лазерная резка</div>
+          <h3 class="card__title">Лазерная резка vs фрезеровка: что выбрать</h3>
+          <p class="card__desc">Подробное сравнение двух технологий: точность, скорость, стоимость, ограничения. Помощь в выборе оптимального метода.</p>
+          <div style="margin-top:var(--sp-3);display:flex;align-items:center;gap:var(--sp-2);">
+            <span class="material-icons icon-xs" style="color:var(--on-surface-3);">calendar_today</span>
+            <span class="caption">Скоро</span>
+          </div>
+        </div>
+      </div>
+      <div class="card fade-up">
+        <div class="card__media">
+          <span class="material-icons">print</span>
+        </div>
+        <div class="card__content">
+          <div class="card__overline"><span class="material-icons icon-xs">print</span> УФ-печать</div>
+          <h3 class="card__title">УФ-печать на разных поверхностях</h3>
+          <p class="card__desc">Гид по УФ-печати: на каких материалах можно печатать, как подготовить макет и какие результаты ожидать.</p>
+          <div style="margin-top:var(--sp-3);display:flex;align-items:center;gap:var(--sp-2);">
+            <span class="material-icons icon-xs" style="color:var(--on-surface-3);">calendar_today</span>
+            <span class="caption">Скоро</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<div id="app-footer"></div>
+
+<script src="../js/templates.js"></script>
+<script src="../js/main.js"></script>
+<script>
+  initApp('blog/index.html');
+  document.getElementById('breadcrumbs').innerHTML = renderBreadcrumbs([
+    { href: 'index.html', label: 'Главная' },
+    { label: 'Блог' }
+  ]);
+</script>
+</body>
+</html>

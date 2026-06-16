@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фрезеровка на ЧПУ — ProFreza24</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+    <style>
+        .material-icons {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        body {
+            font-family: 'Mulish', sans-serif;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section__title {
+            font-size: 2rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .section__subtitle {
+            font-size: 1.1rem;
+            text-align: center;
+            color: #666;
+            margin-bottom: 3rem;
+        }
+
+        .page-hero {
+            padding: 120px 0 60px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
+        }
+
+        .page-hero__content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .breadcrumbs {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .breadcrumbs a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .breadcrumbs a:hover {
+            color: #fff;
+        }
+
+        .breadcrumbs__separator {
+            font-size: 0.8rem;
+        }
+
+        .breadcrumbs__current {
+            color: #fff;
+        }
+
+        .page-hero__title {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .page-hero__description {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .service-detail__grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .service-detail__params {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-bottom: 80px;
+        }
+
+        .param-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 32px 24px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .param-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .param-card__icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #e8f4f8 0%, #d1ecf1 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            color: #0d6efd;
+        }
+
+        .param-card__icon .material-icons {
+            font-size: 32px;
+        }
+
+        .param-card__label {
+            font-size: 0.85rem;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .param-card__value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1a1a2e;
+        }
+
+        .materials-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-bottom: 80px;
+        }
+
+        .material-card {
+            background: #f8f9fa;
+            border-radius: 16px;
+            padding: 32px 24px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .material-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .material-card__icon {
+            width: 72px;
+            height: 72px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            font-size: 36px;
+        }
+
+        .material-card__icon--wood {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            color: #8B4513;
+        }
+
+        .material-card__icon--plastic {
+            background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+            color: #1565C0;
+        }
+
+        .material-card__icon--polycarbonate {
+            background: linear-gradient(135deg, #d4fc79 0%, #96e6a1 100%);
+            color: #2E7D32;
+        }
+
+        .material-card__icon--composite {
+            background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+            color: #6A1B9A;
+        }
+
+        .material-card__name {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 8px;
+        }
+
+        .material-card__desc {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        .portfolio-card {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .portfolio-card__image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            background: #e9ecef;
+        }
+
+        .portfolio-card__content {
+            padding: 20px;
+            background: #fff;
+        }
+
+        .portfolio-card__title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 6px;
+        }
+
+        .portfolio-card__desc {
+            font-size: 0.88rem;
+            color: #666;
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 60px 0 80px;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #0d6efd 0%, #0b5ed7 100%);
+            color: #fff;
+            font-family: 'Mulish', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            padding: 16px 40px;
+            border: none;
+            border-radius: 12px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(13, 110, 253, 0.4);
+        }
+
+        @media (max-width: 992px) {
+            .service-detail__params {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .materials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .service-detail__params {
+                grid-template-columns: 1fr;
+            }
+            .materials-grid {
+                grid-template-columns: 1fr;
+            }
+            .page-hero__title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="app-header"></div>
+
+    <section class="page-hero">
+        <div class="page-hero__content">
+            <div id="breadcrumbs"></div>
+            <h1 class="page-hero__title">Фрезеровка на ЧПУ</h1>
+            <p class="page-hero__description">
+                Точная обработка материалов на высокоточном ЧПУ-оборудовании.
+                Выполняем фрезерные работы любой сложности — от мелких деталей до крупногабаритных изделий.
+            </p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="service-detail__grid">
+            <h2 class="section__title">Параметры обработки</h2>
+            <p class="section__subtitle">Наши возможности для точного фрезерования</p>
+
+            <div class="service-detail__params">
+                <div class="param-card">
+                    <div class="param-card__icon">
+                        <span class="material-icons">straighten</span>
+                    </div>
+                    <div class="param-card__label">Толщина</div>
+                    <div class="param-card__value">1–100 мм</div>
+                </div>
+                <div class="param-card">
+                    <div class="param-card__icon">
+                        <span class="material-icons">build</span>
+                    </div>
+                    <div class="param-card__label">Точность</div>
+                    <div class="param-card__value">0.1 мм</div>
+                </div>
+                <div class="param-card">
+                    <div class="param-card__icon">
+                        <span class="material-icons">crop_landscape</span>
+                    </div>
+                    <div class="param-card__label">Поле реза</div>
+                    <div class="param-card__value">2000×3000</div>
+                </div>
+                <div class="param-card">
+                    <div class="param-card__icon">
+                        <span class="material-icons">schedule</span>
+                    </div>
+                    <div class="param-card__label">Срок</div>
+                    <div class="param-card__value">от 2 ч</div>
+                </div>
+            </div>
+
+            <h2 class="section__title">Материалы для обработки</h2>
+            <p class="section__subtitle">Работаем с широким спектром материалов</p>
+
+            <div class="materials-grid">
+                <div class="material-card">
+                    <div class="material-card__icon material-card__icon--wood">
+                        <span class="material-icons">deck</span>
+                    </div>
+                    <div class="material-card__name">Дерево</div>
+                    <div class="material-card__desc">ДСП, МДФ, фанера, массив, шпонированное ДСП</div>
+                </div>
+                <div class="material-card">
+                    <div class="material-card__icon material-card__icon--plastic">
+                        <span class="material-icons">3d_rotation</span>
+                    </div>
+                    <div class="material-card__name">Пластики</div>
+                    <div class="material-card__desc">ПВХ, АБС, ПС, полиэтилен, нейлон</div>
+                </div>
+                <div class="material-card">
+                    <div class="material-card__icon material-card__icon--polycarbonate">
+                        <span class="material-icons">window</span>
+                    </div>
+                    <div class="material-card__name">Поликарбонат</div>
+                    <div class="material-card__desc">Прозрачный, цветной, сотовый, монолитный</div>
+                </div>
+                <div class="material-card">
+                    <div class="material-card__icon material-card__icon--composite">
+                        <span class="material-icons">layers</span>
+                    </div>
+                    <div class="material-card__name">Композит</div>
+                    <div class="material-card__desc">Алюмокомпозит, полимерный композит, ACM</div>
+                </div>
+            </div>
+
+            <h2 class="section__title">Примеры работ</h2>
+            <p class="section__subtitle">Наши выполненные проекты</p>
+
+            <div class="portfolio-grid">
+                <div class="portfolio-card">
+                    <img class="portfolio-card__image" src="" alt="Декоративные панели">
+                    <div class="portfolio-card__content">
+                        <h3 class="portfolio-card__title">Декоративные панели из МДФ</h3>
+                        <p class="portfolio-card__desc">Резные фасады для кухонного гарнитура, глубина реза 8 мм</p>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <img class="portfolio-card__image" src="" alt="Технические детали">
+                    <div class="portfolio-card__content">
+                        <h3 class="portfolio-card__title">Технические детали из ПВХ</h3>
+                        <p class="portfolio-card__desc">Мелкосерийное производство корпусов для электроники</p>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <img class="portfolio-card__image" src="" alt="Рекламные вывески">
+                    <div class="portfolio-card__content">
+                        <h3 class="portfolio-card__title">Рекламные вывески из композита</h3>
+                        <p class="portfolio-card__desc">Объёмные буквы и логотипы для торгового центра</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <a href="../../kontakty/index.html" class="cta-btn">
+                    <span class="material-icons">mail</span>
+                    Обсудить проект
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div id="app-footer"></div>
+
+    <script src="../../js/templates.js"></script>
+    <script src="../../js/main.js"></script>
+    <script>
+        initApp('uslugi/frezerovka-na-chpu/index.html');
+        document.getElementById('breadcrumbs').innerHTML = renderBreadcrumbs([
+            { href: 'index.html', label: 'Главная' },
+            { href: 'uslugi/index.html', label: 'Услуги' },
+            { label: 'Фрезеровка на ЧПУ' }
+        ]);
+    </script>
+</body>
+</html>

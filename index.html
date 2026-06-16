@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProFreza24 — Фрезеровка на ЧПУ, лазерная резка, УФ-печать</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header" id="header">
+  <div class="container header__inner">
+    <a href="index.html" class="header__logo">
+      <span class="material-icons">settings</span> ProFreza24
+    </a>
+    <nav class="header__nav">
+      <a href="index.html" class="nav-link active">Главная</a>
+      <a href="uslugi/index.html" class="nav-link">Услуги</a>
+      <a href="portfolio/index.html" class="nav-link">Портфолио</a>
+      <a href="price/index.html" class="nav-link">Прайс</a>
+      <a href="kontakty/index.html" class="nav-link">Контакты</a>
+    </nav>
+    <div class="header__actions">
+      <a href="tel:+74951234567" class="header__phone">
+        <span class="material-icons icon-sm">call</span> +7 (495) 123-45-67
+      </a>
+      <a href="kontakty/index.html" class="btn btn--primary btn--md btn--round">
+        <span class="material-icons icon-sm">file_upload</span> Загрузить файл
+      </a>
+      <button class="header__burger" id="burgerBtn" aria-label="Меню">
+        <span class="material-icons">menu</span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" class="mobile-menu__link"><span class="material-icons">home</span> Главная</a>
+    <a href="uslugi/index.html" class="mobile-menu__link"><span class="material-icons">build</span> Услуги</a>
+    <a href="portfolio/index.html" class="mobile-menu__link"><span class="material-icons">photo_library</span> Портфолио</a>
+    <a href="price/index.html" class="mobile-menu__link"><span class="material-icons">receipt</span> Прайс</a>
+    <a href="kontakty/index.html" class="mobile-menu__link"><span class="material-icons">mail</span> Контакты</a>
+    <a href="tel:+74951234567" class="mobile-menu__phone">
+      <span class="material-icons">call</span> +7 (495) 123-45-67
+    </a>
+    <div class="mobile-menu__cta">
+      <a href="kontakty/index.html" class="btn btn--primary btn--lg btn--full btn--round">
+        <span class="material-icons icon-sm">calculate</span> Рассчитать стоимость
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="container hero__inner">
+    <div class="hero__content">
+      <p class="hero__eyebrow">
+        <span class="material-icons">factory</span> Производство · Москва · С 2013 года
+      </p>
+      <h1 class="hero__title">Фрезеровка, резка и печать <span>по вашим чертежам</span></h1>
+      <p class="hero__sub">ЧПУ-фрезеровка, лазерная резка и УФ-печать листовых материалов. Принимаем файлы DXF, SVG, AI. Срок от 2 часов.</p>
+      <div class="hero__cta">
+        <a href="kontakty/index.html" class="btn btn--primary btn--xl btn--round">
+          <span class="material-icons icon-sm">calculate</span> Рассчитать стоимость
+        </a>
+        <a href="portfolio/index.html" class="btn btn--gray btn--xl btn--round">
+          <span class="material-icons icon-sm">photo_library</span> Смотреть работы
+        </a>
+      </div>
+    </div>
+    <div class="hero__visual">
+      <div class="hero__placeholder">
+        <span class="material-icons">settings_suggest</span>
+        <span class="body2">Фото станка в работе</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ КАЛЬКУЛЯТОР ═══ -->
+<section class="section">
+  <div class="container">
+    <div class="section__header">
+      <p class="overline"><span class="material-icons icon-xs">speed</span> Быстрый расчёт</p>
+      <h2 class="section__title">Узнайте стоимость за 30 секунд</h2>
+    </div>
+    <div class="calc">
+      <div class="calc__row">
+        <div class="calc__field">
+          <label class="calc__label"><span class="material-icons icon-xs">build</span> Услуга</label>
+          <select class="calc__select" id="calcService">
+            <option value="frezerovka">Фрезеровка на ЧПУ</option>
+            <option value="lazer">Лазерная резка</option>
+            <option value="uv">УФ-печать</option>
+          </select>
+        </div>
+        <div class="calc__field">
+          <label class="calc__label"><span class="material-icons icon-xs">category</span> Материал</label>
+          <select class="calc__select" id="calcMaterial">
+            <option value="derevo">Дерево / Фанера</option>
+            <option value="plastik">Пластик (ПВХ, АБС)</option>
+            <option value="orgsteklo">Оргстекло</option>
+            <option value="metal">Композит</option>
+          </select>
+        </div>
+        <div class="calc__field">
+          <label class="calc__label"><span class="material-icons icon-xs">straighten</span> Толщина, мм</label>
+          <input type="number" class="calc__input" id="calcThickness" placeholder="3–50" min="1" max="100">
+        </div>
+        <div class="calc__field">
+          <label class="calc__label"><span class="material-icons icon-xs">straighten</span> Площадь, м²</label>
+          <input type="number" class="calc__input" id="calcArea" placeholder="0.5" min="0.01" step="0.01">
+        </div>
+      </div>
+      <div class="calc__result">
+        <div class="calc__result-label">Ориентировочная стоимость</div>
+        <div class="calc__result-price" id="calcPrice">—</div>
+        <div class="calc__result-note">Точная цена — после анализа вашего файла</div>
+      </div>
+      <a href="kontakty/index.html" class="btn btn--primary btn--lg btn--full btn--round">
+        <span class="material-icons icon-sm">send</span> Получить точный расчёт
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ЦИФРЫ ═══ -->
+<section class="section section--dark">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="fade-up">
+        <div class="stat__icon"><span class="material-icons">event</span></div>
+        <div class="stat__value">2013</div>
+        <div class="stat__label">Год основания</div>
+      </div>
+      <div class="fade-up">
+        <div class="stat__icon"><span class="material-icons">inventory</span></div>
+        <div class="stat__value">2 400+</div>
+        <div class="stat__label">Заказов выполнено</div>
+      </div>
+      <div class="fade-up">
+        <div class="stat__icon"><span class="material-icons">straighten</span></div>
+        <div class="stat__value">0.1 мм</div>
+        <div class="stat__label">Точность обработки</div>
+      </div>
+      <div class="fade-up">
+        <div class="stat__icon"><span class="material-icons">filter_1</span></div>
+        <div class="stat__value">от 1</div>
+        <div class="stat__label">Минимальный заказ</div>
+      </div>
+      <div class="fade-up">
+        <div class="stat__icon"><span class="material-icons">timer</span></div>
+        <div class="stat__value">2 ч</div>
+        <div class="stat__label">Срок от выдачи</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ УСЛУГИ ═══ -->
+<section class="section">
+  <div class="container">
+    <div class="section__header">
+      <p class="overline"><span class="material-icons icon-xs">build</span> Услуги</p>
+      <h2 class="section__title">Полный цикл обработки</h2>
+      <p class="section__sub">От чертежа до готового изделия</p>
+    </div>
+    <div class="services-grid">
+      <a href="uslugi/frezerovka-na-chpu/index.html" class="service-card fade-up">
+        <div class="service-card__icon"><span class="material-icons">settings</span></div>
+        <div class="service-card__num">01</div>
+        <h3 class="service-card__title">Фрезеровка на ЧПУ</h3>
+        <p class="service-card__desc">Дерево, ДСП, МДФ, фанера, пластики, поликарбонат, композит. Толщина до 100 мм.</p>
+        <span class="service-card__link">Подробнее <span class="material-icons">arrow_forward</span></span>
+      </a>
+      <a href="lazernaya-rezka/index.html" class="service-card fade-up">
+        <div class="service-card__icon"><span class="material-symbolsFilled">bolt</span></div>
+        <div class="service-card__num">02</div>
+        <h3 class="service-card__title">Лазерная резка</h3>
+        <p class="service-card__desc">Полистирол, фанера, оргстекло, ПЭТ. Высокая точность, чистый край.</p>
+        <span class="service-card__link">Подробнее <span class="material-icons">arrow_forward</span></span>
+      </a>
+      <a href="uslugi/uf-pechat/index.html" class="service-card fade-up">
+        <div class="service-card__icon"><span class="material-icons">print</span></div>
+        <div class="service-card__num">03</div>
+        <h3 class="service-card__title">УФ-печать</h3>
+        <p class="service-card__desc">Композит, ПВХ, оргстекло, МДФ, фанера, ПЭТ. Печать до 1200 мм.</p>
+        <span class="service-card__link">Подробнее <span class="material-icons">arrow_forward</span></span>
+      </a>
+      <a href="uslugi/index.html#3d" class="service-card fade-up">
+        <div class="service-card__icon"><span class="material-icons">3d_rotation</span></div>
+        <div class="service-card__num">04</div>
+        <h3 class="service-card__title">3D-фрезеровка</h3>
+        <p class="service-card__desc">Объёмные изделия, макеты, лепнина. Работа по 3D-моделям.</p>
+        <span class="service-card__link">Подробнее <span class="material-icons">arrow_forward</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ПОРТФОЛИО ═══ -->
+<section class="section section--surface">
+  <div class="container">
+    <div class="section__head">
+      <div class="section__header" style="margin-bottom:0;">
+        <p class="overline"><span class="material-icons icon-xs">photo_library</span> Портфолио</p>
+        <h2 class="section__title">Примеры работ</h2>
+      </div>
+      <a href="portfolio/index.html" class="btn btn--outlined btn--md btn--round">
+        Все работы <span class="material-icons icon-sm">arrow_forward</span>
+      </a>
+    </div>
+    <div class="portfolio-grid">
+      <div class="portfolio-card fade-up">
+        <div class="portfolio-card__img"><span class="material-icons">image</span></div>
+        <div class="portfolio-card__info">
+          <span class="chip chip--primary"><span class="material-icons icon-xs">settings</span> Фрезеровка</span>
+          <h4 class="portfolio-card__title">Вывеска для ресторана</h4>
+          <p class="portfolio-card__meta">Фанера 12 мм · Тираж 15 шт.</p>
+        </div>
+      </div>
+      <div class="portfolio-card fade-up">
+        <div class="portfolio-card__img"><span class="material-icons">image</span></div>
+        <div class="portfolio-card__info">
+          <span class="chip chip--primary"><span class="material-icons icon-xs">bolt</span> Лазер</span>
+          <h4 class="portfolio-card__title">Декоративные перегородки</h4>
+          <p class="portfolio-card__meta">Композит 4 мм · Тираж 8 шт.</p>
+        </div>
+      </div>
+      <div class="portfolio-card fade-up">
+        <div class="portfolio-card__img"><span class="material-icons">image</span></div>
+        <div class="portfolio-card__info">
+          <span class="chip chip--primary"><span class="material-icons icon-xs">print</span> УФ-печать</span>
+          <h4 class="portfolio-card__title">Таблички для офиса</h4>
+          <p class="portfolio-card__meta">Оргстекло 5 мм · Тираж 40 шт.</p>
+        </div>
+      </div>
+      <div class="portfolio-card fade-up">
+        <div class="portfolio-card__img"><span class="material-icons">image</span></div>
+        <div class="portfolio-card__info">
+          <span class="chip chip--primary"><span class="material-icons icon-xs">3d_rotation</span> 3D</span>
+          <h4 class="portfolio-card__title">Архитектурный макет</h4>
+          <p class="portfolio-card__meta">ПВХ 20 мм · 1 шт.</p>
+        </div>
+      </div>
+      <div class="portfolio-card fade-up">
+        <div class="portfolio-card__img"><span class="material-icons">image</span></div>
+        <div class="portfolio-card__info">
+          <span class="chip chip--primary"><span class="material-icons icon-xs">settings</span> Фрезеровка</span>
+          <h4 class="portfolio-card__title">Упаковка для косметики</h4>
+          <p class="portfolio-card__meta">МДФ 6 мм · Тираж 200 шт.</p>
+        </div>
+      </div>
+      <div class="portfolio-card fade-up">
+        <div class="portfolio-card__img"><span class="material-icons">image</span></div>
+        <div class="portfolio-card__info">
+          <span class="chip chip--primary"><span class="material-icons icon-xs">bolt</span> Лазер</span>
+          <h4 class="portfolio-card__title">Логотипы для выставки</h4>
+          <p class="portfolio-card__meta">Акрил 10 мм · Тираж 12 шт.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ОТЗЫВЫ ═══ -->
+<section class="section">
+  <div class="container">
+    <div class="section__header">
+      <p class="overline"><span class="material-icons icon-xs">reviews</span> Отзывы</p>
+      <h2 class="section__title">Что говорят о нас</h2>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card fade-up">
+        <div class="review-card__stars">
+          <span class="material-icons">star</span>
+          <span class="material-icons">star</span>
+          <span class="material-icons">star</span>
+          <span class="material-icons">star</span>
+          <span class="material-icons">star</span>
+        </div>
+        <p class="review-card__text">«Заказывали вывески для сети кофеен — 120 шт. за 3 дня. Качество отличное, все по размерам. Работаем с ними уже 2 года.»</p>
+        <div class="review-card__author">
+          <div class="review-card__avatar">АС</div>
+          <div>
+            <div class="review-card__name">Алексей Смирнов</div>
+            <div class="review-card__company">Рекламное агентство «БрендМастер»</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card fade-up">
+        <div class="review-card__stars">
+          <span class="material-icons">star</span>
+          <span class="material-icons">star</span>
+          <span class="material-icons">star</span>
+          <span class="material-icons">star</span>
+          <span class="material-icons">star</span>
+        </div>
+        <p class="review-card__text">«Делали макет здания для архитектурного бюро. Сложная геометрия, всё execution perfectly. Сроки соблюдены.»</p>
+        <div class="review-card__author">
+          <div class="review-card__avatar">МК</div>
+          <div>
+            <div class="review-card__name">Мария Козлова</div>
+            <div class="review-card__company">Архитектурное бюро «Проект»</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card fade-up">
+        <div class="review-card__stars">
+          <span class="material-icons">star</span>
+          <span class="material-icons">star</span>
+          <span class="material-icons">star</span>
+          <span class="material-icons">star</span>
+          <span class="material-icons">star</span>
+        </div>
+        <p class="review-card__text">«Быстро, качественно, с пониманием дела. Приняли файл в DXF, сделали за 4 часа. Рекомендую.»</p>
+        <div class="review-card__author">
+          <div class="review-card__avatar">ДВ</div>
+          <div>
+            <div class="review-card__name">Дмитрий Волков</div>
+            <div class="review-card__company">Мебельная мастерская «ВудХаус»</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ПОЧЕМУ МЫ ═══ -->
+<section class="section section--surface">
+  <div class="container">
+    <div class="section__header" style="text-align:center;">
+      <p class="overline" style="justify-content:center;"><span class="material-icons icon-xs">verified</span> Преимущества</p>
+      <h2 class="section__title" style="margin:0 auto var(--sp-2);">Почему выбирают нас</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card fade-up">
+        <div class="why-card__icon"><span class="material-icons">calendar_today</span></div>
+        <div class="why-card__title">С 2013 года</div>
+        <div class="why-card__desc">12 лет на рынке, стабильное качество</div>
+      </div>
+      <div class="why-card fade-up">
+        <div class="why-card__icon"><span class="material-icons">file_upload</span></div>
+        <div class="why-card__title">Принимаем DXF / SVG / AI</div>
+        <div class="why-card__desc">Работаем с любыми чертежами</div>
+      </div>
+      <div class="why-card fade-up">
+        <div class="why-card__icon"><span class="material-icons">schedule</span></div>
+        <div class="why-card__title">Приём заказов до 22:00</div>
+        <div class="why-card__desc">Удобный график для бизнеса</div>
+      </div>
+      <div class="why-card fade-up">
+        <div class="why-card__icon"><span class="material-icons">account_balance</span></div>
+        <div class="why-card__title">Оплата по безналу</div>
+        <div class="why-card__desc">Для юридических лиц и ИП</div>
+      </div>
+      <div class="why-card fade-up">
+        <div class="why-card__icon"><span class="material-icons">filter_1</span></div>
+        <div class="why-card__title">От 1 детали</div>
+        <div class="why-card__desc">Без минимального тиража</div>
+      </div>
+      <div class="why-card fade-up">
+        <div class="why-card__icon"><span class="material-icons">local_shipping</span></div>
+        <div class="why-card__title">Доставка по Москве</div>
+        <div class="why-card__desc">Собственная служба доставки</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section class="section">
+  <div class="container">
+    <div class="section__header">
+      <p class="overline"><span class="material-icons icon-xs">help</span> FAQ</p>
+      <h2 class="section__title">Частые вопросы</h2>
+    </div>
+    <div class="faq">
+      <div class="faq__item">
+        <button class="faq__question" onclick="toggleFaq(this)">
+          <span>Какие форматы файлов принимаете?</span>
+          <span class="material-icons">add</span>
+        </button>
+        <div class="faq__answer"><p>Принимаем DXF, SVG, AI, CDR, PDF, DWG. Если у вас другой формат — свяжитесь с нами, поможем подготовить файл.</p></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__question" onclick="toggleFaq(this)">
+          <span>Какой минимальный заказ?</span>
+          <span class="material-icons">add</span>
+        </button>
+        <div class="faq__answer"><p>Минимальный заказ — от 1 детали. Мы работаем как с крупными тиражами, так и с разовыми заказами.</p></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__question" onclick="toggleFaq(this)">
+          <span>Каковы сроки изготовления?</span>
+          <span class="material-icons">add</span>
+        </button>
+        <div class="faq__answer"><p>Стандартные заказы — 1–3 рабочих дня. Срочные — от 2 часов с момента согласования макета.</p></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__question" onclick="toggleFaq(this)">
+          <span>Как передать макет?</span>
+          <span class="material-icons">add</span>
+        </button>
+        <div class="faq__answer"><p>Через форму на сайте, по email или в мессенджерах. Прикрепите файл и укажите параметры: материал, толщину, тираж.</p></div>
+      </div>
+      <div class="faq__item">
+        <button class="faq__question" onclick="toggleFaq(this)">
+          <span>Работаете с физическими лицами?</span>
+          <span class="material-icons">add</span>
+        </button>
+        <div class="faq__answer"><p>Да, работаем с физлицами, ИП и юридическими лицами. Оплата: наличные, карта, безнал.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ФОРМА ═══ -->
+<section class="section section--surface" id="contactForm">
+  <div class="container">
+    <div class="form-card">
+      <div class="form-block__info">
+        <p class="overline"><span class="material-icons icon-xs">mail</span> Заявка</p>
+        <h2 class="section__title">Получить расчёт</h2>
+        <p class="section__sub">Прикрепите чертёж и укажите параметры — мы вернёмся с ценой в течение часа</p>
+        <div class="form-features">
+          <div class="form-feature">
+            <div class="form-feature__icon"><span class="material-icons">attach_file</span></div>
+            <span>Принимаем DXF, SVG, AI, CDR, PDF</span>
+          </div>
+          <div class="form-feature">
+            <div class="form-feature__icon"><span class="material-icons">bolt</span></div>
+            <span>Ответ в течение 1 часа</span>
+          </div>
+          <div class="form-feature">
+            <div class="form-feature__icon"><span class="material-icons">lock</span></div>
+            <span>Без обязательств к покупке</span>
+          </div>
+        </div>
+      </div>
+      <form class="form" id="mainForm" onsubmit="handleFormSubmit(event)">
+        <div class="form__group">
+          <label class="form__label">Имя</label>
+          <input type="text" class="form__input" placeholder="Ваше имя" required>
+        </div>
+        <div class="form__group">
+          <label class="form__label">Телефон</label>
+          <input type="tel" class="form__input" placeholder="+7 (___) ___-__-__" required>
+        </div>
+        <div class="form__group">
+          <label class="form__label">Email</label>
+          <input type="email" class="form__input" placeholder="email@example.com">
+        </div>
+        <div class="form__group">
+          <label class="form__label">Услуга</label>
+          <select class="form__input">
+            <option value="">Выберите услугу</option>
+            <option>Фрезеровка на ЧПУ</option>
+            <option>Лазерная резка</option>
+            <option>УФ-печать</option>
+            <option>3D-фрезеровка</option>
+          </select>
+        </div>
+        <div class="form__group">
+          <label class="form__label">Файл чертежа</label>
+          <label class="form__file-label">
+            <input type="file" class="form__file" id="fileInput" accept=".dxf,.svg,.ai,.cdr,.pdf,.dwg">
+            <span class="form__file-btn"><span class="material-icons icon-sm">upload</span> Выбрать файл</span>
+            <span class="form__file-name" id="fileName">Файл не выбран</span>
+          </label>
+        </div>
+        <div class="form__group">
+          <label class="form__label">Комментарий</label>
+          <textarea class="form__input form__textarea" placeholder="Материал, толщина, тираж, сроки" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn--primary btn--lg btn--full btn--round">
+          <span class="material-icons icon-sm">send</span> Получить расчёт
+        </button>
+        <p class="form__consent">Нажимая кнопку, вы соглашаетесь с <a href="privacy/index.html">политикой конфиденциальности</a></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <a href="index.html" class="footer__logo">
+          <span class="material-icons">settings</span> ProFreza24
+        </a>
+        <p class="footer__desc">Фрезеровка на ЧПУ, лазерная резка и УФ-печать листовых материалов. Производство в Москве с 2013 года.</p>
+        <div class="footer__socials">
+          <a href="#" class="footer__social" aria-label="Telegram"><span class="material-icons icon-sm">chat</span></a>
+          <a href="#" class="footer__social" aria-label="WhatsApp"><span class="material-icons icon-sm">phone</span></a>
+        </div>
+      </div>
+      <div>
+        <h4 class="footer__heading">Услуги</h4>
+        <a href="uslugi/frezerovka-na-chpu/index.html" class="footer__link"><span class="material-icons">settings</span> Фрезеровка на ЧПУ</a>
+        <a href="lazernaya-rezka/index.html" class="footer__link"><span class="material-icons">bolt</span> Лазерная резка</a>
+        <a href="uslugi/uf-pechat/index.html" class="footer__link"><span class="material-icons">print</span> УФ-печать</a>
+        <a href="uslugi/index.html#3d" class="footer__link"><span class="material-icons">3d_rotation</span> 3D-фрезеровка</a>
+      </div>
+      <div>
+        <h4 class="footer__heading">Материалы</h4>
+        <a href="uslugi/frezerovka-na-chpu/index.html" class="footer__link"><span class="material-icons">tree</span> Дерево и фанера</a>
+        <a href="uslugi/frezerovka-na-chpu/index.html" class="footer__link"><span class="material-icons">category</span> Пластики</a>
+        <a href="uslugi/frezerovka-na-chpu/index.html" class="footer__link"><span class="material-icons">diamond</span> Оргстекло</a>
+        <a href="uslugi/frezerovka-na-chpu/index.html" class="footer__link"><span class="material-icons">apartment</span> Композит</a>
+      </div>
+      <div>
+        <h4 class="footer__heading">Контакты</h4>
+        <a href="tel:+74951234567" class="footer__link footer__link--phone"><span class="material-icons">call</span> +7 (495) 123-45-67</a>
+        <a href="mailto:info@profreza24.ru" class="footer__link"><span class="material-icons">mail</span> info@profreza24.ru</a>
+        <p class="footer__link"><span class="material-icons">location_on</span> г. Москва, ул. Промышленная, д. 5</p>
+        <p class="footer__link"><span class="material-icons">schedule</span> Пн–Пт: 9:00–22:00</p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2025 ProFreza24. Все права защищены.</span>
+      <a href="privacy/index.html">Политика конфиденциальности</a>
+      <a href="soglasie-na-obrabotku-personalnykh-dannykh/index.html">Согласие на обработку ПД</a>
+    </div>
+  </div>
+</footer>
+
+<!-- MOBILE BAR -->
+<div class="mobile-bar">
+  <a href="kontakty/index.html" class="mobile-bar__btn mobile-bar__btn--primary">
+    <span class="material-icons icon-sm">calculate</span> Рассчитать
+  </a>
+  <a href="tel:+74951234567" class="mobile-bar__btn mobile-bar__btn--secondary">
+    <span class="material-icons icon-sm">call</span> Позвонить
+  </a>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

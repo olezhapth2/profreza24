@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лазерная резка — ProFreza24</title>
+  <meta name="description" content="Лазерная резка CO2 лазером материалов до 20 мм. Точность 0.05 мм, поле 1600×1000 мм. Срок от 1 часа. Производство в Москве.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<div id="app-header"></div>
+
+<!-- BREADCRUMBS -->
+<section class="page-hero">
+  <div class="container">
+    <div id="breadcrumbs"></div>
+    <h1 class="page-hero__title">Лазерная резка</h1>
+    <p class="page-hero__sub">Высокоточная резка CO2 лазером листовых материалов. Чистый край без обработки, минимум отходов.</p>
+  </div>
+</section>
+
+<!-- DETAIL -->
+<section class="section service-detail">
+  <div class="container">
+    <div class="service-detail__grid">
+      <div>
+        <p class="overline"><span class="material-icons icon-xs">bolt</span> CO2 лазер</p>
+        <h2 class="section__title" style="margin-bottom:var(--sp-4)">Режем пластик, дерево и композит</h2>
+        <p class="section__sub">CO2 лазер мощностью до 150 Вт разрезает листовые материалы толщиной от 0.5 до 20 мм. Луч не контактирует с деталью — край получается гладким, без сколов и необходимости дополнительной обработки. Подходит для мелкосерийного и штучного производства.</p>
+        <a href="../kontakty/index.html" class="btn btn--primary btn--lg btn--round" style="margin-top:var(--sp-6)">
+          <span class="material-icons icon-sm">calculate</span> Рассчитать стоимость
+        </a>
+      </div>
+      <div class="hero__placeholder" style="min-height:320px">
+        <span class="material-icons" style="font-size:64px;color:var(--primary)">bolt</span>
+        <span class="body2">Фото лазерного станка</span>
+      </div>
+    </div>
+
+    <!-- PARAMS -->
+    <div class="service-detail__params">
+      <div class="param-card">
+        <div class="param-card__label"><span class="material-icons">straighten</span> Толщина</div>
+        <div class="param-card__value">0.5–20 мм</div>
+      </div>
+      <div class="param-card">
+        <div class="param-card__label"><span class="material-icons">gps_fixed</span> Точность</div>
+        <div class="param-card__value">0.05 мм</div>
+      </div>
+      <div class="param-card">
+        <div class="param-card__label"><span class="material-icons">crop_free</span> Поле резки</div>
+        <div class="param-card__value">1600×1000 мм</div>
+      </div>
+      <div class="param-card">
+        <div class="param-card__label"><span class="material-icons">schedule</span> Срок</div>
+        <div class="param-card__value">от 1 ч</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MATERIALS -->
+<section class="section section--surface">
+  <div class="container">
+    <div class="section__header">
+      <p class="overline"><span class="material-icons icon-xs">category</span> Материалы</p>
+      <h2 class="section__title">Что режем</h2>
+      <p class="section__sub">Работаем с листовыми материалами для интерьерной, рекламной и промышленной продукции.</p>
+    </div>
+    <div class="service-detail__params">
+      <div class="param-card">
+        <div class="param-card__label"><span class="material-icons">view_carousel</span> Полистирол</div>
+        <div class="param-card__value" style="font-size:16px;font-weight:600">Интерьер, стенды, упаковка</div>
+      </div>
+      <div class="param-card">
+        <div class="param-card__label"><span class="material-icons">wood</span> Фанера</div>
+        <div class="param-card__value" style="font-size:16px;font-weight:600">Декор, макеты, подставки</div>
+      </div>
+      <div class="param-card">
+        <div class="param-card__label"><span class="material-icons">diamond</span> Оргстекло</div>
+        <div class="param-card__value" style="font-size:16px;font-weight:600">Вывески, кубки, лотки</div>
+      </div>
+      <div class="param-card">
+        <div class="param-card__label"><span class="material-icons">inventory</span> ПЭТ</div>
+        <div class="param-card__value" style="font-size:16px;font-weight:600">Упаковка, шаблоны, лекала</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section" id="contactForm">
+  <div class="container" style="text-align:center;max-width:700px">
+    <p class="overline"><span class="material-icons icon-xs">mail</span> Заявка</p>
+    <h2 class="section__title">Нужна лазерная резка?</h2>
+    <p class="section__sub" style="margin:0 auto var(--sp-6)">Прикрепите чертёж (DXF, SVG, AI, CDR, PDF) и укажите материал с толщиной — мы вернёмся с ценой в течение часа.</p>
+    <a href="../kontakty/index.html" class="btn btn--primary btn--xl btn--round">
+      <span class="material-icons icon-sm">calculate</span> Рассчитать стоимость
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<div id="app-footer"></div>
+
+<script src="../js/templates.js"></script>
+<script>
+  initApp('lazernaya-rezka/index.html');
+  document.getElementById('breadcrumbs').innerHTML = renderBreadcrumbs([
+    { href: 'index.html', label: 'Главная' },
+    { label: 'Лазерная резка' }
+  ]);
+</script>
+<script src="../js/main.js"></script>
+</body>
+</html>

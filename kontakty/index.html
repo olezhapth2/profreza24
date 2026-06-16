@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Контакты — ProFreza24</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div id="app-header"></div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div id="breadcrumbs"></div>
+    <h1 class="page-hero__title">Контакты</h1>
+    <p class="page-hero__sub">Свяжитесь с нами любым удобным способом</p>
+  </div>
+</section>
+
+<!-- CONTACTS -->
+<section class="section">
+  <div class="container">
+    <div class="form-card">
+
+      <!-- Left: Contact Info -->
+      <div class="form-block__info">
+        <p class="overline"><span class="material-icons icon-xs">mail</span> Контакты</p>
+        <h2 class="section__title">Свяжитесь с нами</h2>
+        <p class="section__sub">Позвоните, напишите или приезжайте в офис</p>
+
+        <div class="form-features">
+          <div class="form-feature">
+            <div class="form-feature__icon"><span class="material-icons">call</span></div>
+            <div>
+              <strong>+7 (495) 123-45-67</strong>
+              <span class="form-feature__note">Пн–Пт: 9:00–22:00</span>
+            </div>
+          </div>
+          <div class="form-feature">
+            <div class="form-feature__icon"><span class="material-icons">mail</span></div>
+            <div>
+              <strong>info@profreza24.ru</strong>
+              <span class="form-feature__note">Ответим в течение 1 часа</span>
+            </div>
+          </div>
+          <div class="form-feature">
+            <div class="form-feature__icon"><span class="material-icons">phone</span></div>
+            <div>
+              <strong>WhatsApp / Telegram</strong>
+              <span class="form-feature__note">Быстрый способ связаться</span>
+            </div>
+          </div>
+          <div class="form-feature">
+            <div class="form-feature__icon"><span class="material-icons">location_on</span></div>
+            <div>
+              <strong>г. Москва, ул. Промышленная, д. 5</strong>
+              <span class="form-feature__note">Производственный цех, вход со двора</span>
+            </div>
+          </div>
+          <div class="form-feature">
+            <div class="form-feature__icon"><span class="material-icons">schedule</span></div>
+            <div>
+              <strong>Пн–Пт: 9:00–22:00</strong>
+              <span class="form-feature__note">Приём заказов до 22:00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Form -->
+      <form class="form" id="mainForm" onsubmit="handleFormSubmit(event)">
+        <h3 style="font-size:20px; font-weight:700; margin-bottom:16px;">Оставить заявку</h3>
+        <div class="form__group">
+          <label class="form__label">Имя</label>
+          <input type="text" class="form__input" placeholder="Ваше имя" required>
+        </div>
+        <div class="form__group">
+          <label class="form__label">Телефон</label>
+          <input type="tel" class="form__input" placeholder="+7 (___) ___-__-__" required>
+        </div>
+        <div class="form__group">
+          <label class="form__label">Email</label>
+          <input type="email" class="form__input" placeholder="email@example.com">
+        </div>
+        <div class="form__group">
+          <label class="form__label">Услуга</label>
+          <select class="form__input">
+            <option value="">Выберите услугу</option>
+            <option>Фрезеровка на ЧПУ</option>
+            <option>Лазерная резка</option>
+            <option>УФ-печать</option>
+            <option>3D-фрезеровка</option>
+          </select>
+        </div>
+        <div class="form__group">
+          <label class="form__label">Файл чертежа</label>
+          <label class="form__file-label">
+            <input type="file" class="form__file" id="fileInput" accept=".dxf,.svg,.ai,.cdr,.pdf,.dwg">
+            <span class="form__file-btn"><span class="material-icons icon-sm">upload</span> Выбрать файл</span>
+            <span class="form__file-name" id="fileName">Файл не выбран</span>
+          </label>
+        </div>
+        <div class="form__group">
+          <label class="form__label">Комментарий</label>
+          <textarea class="form__input form__textarea" placeholder="Материал, толщина, тираж, сроки" rows="4"></textarea>
+        </div>
+        <button type="submit" class="btn btn--primary btn--lg btn--full btn--round">
+          <span class="material-icons icon-sm">send</span> Отправить заявку
+        </button>
+        <p class="form__consent">Нажимая кнопку, вы соглашаетесь с <a href="../privacy/index.html">политикой конфиденциальности</a></p>
+      </form>
+
+    </div>
+  </div>
+</section>
+
+<!-- MAP PLACEHOLDER -->
+<section class="section section--surface">
+  <div class="container">
+    <div class="section__header">
+      <p class="overline"><span class="material-icons icon-xs">map</span> Расположение</p>
+      <h2 class="section__title">Как добраться</h2>
+    </div>
+    <div class="map-placeholder">
+      <div style="text-align:center;">
+        <span class="material-icons" style="font-size:48px; color:var(--ink-muted); margin-bottom:8px;">map</span>
+        <p style="font-weight:600;">г. Москва, ул. Промышленная, д. 5</p>
+        <p style="font-size:14px; color:var(--ink-muted); margin-top:4px;">Метро: Нагатинская (10 мин пешком)</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="app-footer"></div>
+
+<script src="../js/templates.js"></script>
+<script src="../js/main.js"></script>
+<script>
+  initApp('kontakty/index.html');
+  document.getElementById('breadcrumbs').innerHTML = renderBreadcrumbs([
+    { href: 'index.html', label: 'Главная' },
+    { label: 'Контакты' }
+  ]);
+</script>
+</body>
+</html>

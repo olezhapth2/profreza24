@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Услуги — ProFreza24</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div id="app-header"></div>
+
+<main>
+  <!-- BREADCRUMBS -->
+  <section class="section" style="padding-top:var(--sp-6); padding-bottom:0;">
+    <div class="container">
+      <div id="breadcrumbs-root"></div>
+    </div>
+  </section>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <h1 class="page-hero__title">Наши услуги</h1>
+      <p class="page-hero__sub">Полный цикл обработки листовых материалов — от чертежа до готового изделия</p>
+    </div>
+  </section>
+
+  <!-- SERVICES GRID -->
+  <section class="section">
+    <div class="container">
+      <div class="section__header">
+        <p class="overline"><span class="material-icons icon-xs">build</span> Направления</p>
+        <h2 class="section__title">Что мы делаем</h2>
+        <p class="section__sub">Выберите технологию — перейдите к описанию, материалам и примерам</p>
+      </div>
+      <div class="services-grid">
+        <a href="frezerovka-na-chpu/index.html" class="service-card fade-up">
+          <div class="service-card__icon"><span class="material-icons">settings</span></div>
+          <div class="service-card__num">01</div>
+          <h3 class="service-card__title">Фрезеровка на ЧПУ</h3>
+          <p class="service-card__desc">Дерево, ДСП, МДФ, фанера, пластики, поликарбонат, композит. Толщина до 100 мм, точность 0.1 мм.</p>
+          <span class="service-card__link">Подробнее <span class="material-icons">arrow_forward</span></span>
+        </a>
+        <a href="../lazernaya-rezka/index.html" class="service-card fade-up">
+          <div class="service-card__icon"><span class="material-icons">bolt</span></div>
+          <div class="service-card__num">02</div>
+          <h3 class="service-card__title">Лазерная резка</h3>
+          <p class="service-card__desc">Полистирол, фанера, оргстекло, ПЭТ. Высокая точность 0.05 мм, чистый обжиг края.</p>
+          <span class="service-card__link">Подробнее <span class="material-icons">arrow_forward</span></span>
+        </a>
+        <a href="uf-pechat/index.html" class="service-card fade-up">
+          <div class="service-card__icon"><span class="material-icons">print</span></div>
+          <div class="service-card__num">03</div>
+          <h3 class="service-card__title">УФ-печать</h3>
+          <p class="service-card__desc">Композит, ПВХ, оргстекло, МДФ, фанера, ПЭТ. Печать до 1200×2400 мм, 1440 dpi.</p>
+          <span class="service-card__link">Подробнее <span class="material-icons">arrow_forward</span></span>
+        </a>
+        <a href="#3d" class="service-card fade-up">
+          <div class="service-card__icon"><span class="material-icons">3d_rotation</span></div>
+          <div class="service-card__num">04</div>
+          <h3 class="service-card__title">3D-фрезеровка</h3>
+          <p class="service-card__desc">Объёмные изделия, макеты, лепнина. Работа по 3D-моделям STL, STEP, IGES.</p>
+          <span class="service-card__link">Подробнее <span class="material-icons">arrow_forward</span></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MATERIALS GRID -->
+  <section class="section section--surface">
+    <div class="container">
+      <div class="section__header">
+        <p class="overline"><span class="material-icons icon-xs">category</span> Материалы</p>
+        <h2 class="section__title">С какими материалами работаем</h2>
+        <p class="section__sub">Листовые материалы различных толщин и типов</p>
+      </div>
+      <div class="services-grid" style="grid-template-columns: repeat(3, 1fr);">
+        <div class="service-card fade-up">
+          <div class="service-card__icon"><span class="material-icons">park</span></div>
+          <h3 class="service-card__title">Дерево</h3>
+          <p class="service-card__desc">ДСП, МДФ, фанера берёзовая и хвойная, массив. Толщина до 50 мм.</p>
+        </div>
+        <div class="service-card fade-up">
+          <div class="service-card__icon"><span class="material-icons">category</span></div>
+          <h3 class="service-card__title">Пластики</h3>
+          <p class="service-card__desc">ПВХ, АБС, полистирол, ПЭТ, полиамид. Толщина до 30 мм.</p>
+        </div>
+        <div class="service-card fade-up">
+          <div class="service-card__icon"><span class="material-icons">diamond</span></div>
+          <h3 class="service-card__title">Поликарбонат</h3>
+          <p class="service-card__desc">Монолитный и сотовый. Прозрачный, цветной. Толщина до 25 мм.</p>
+        </div>
+        <div class="service-card fade-up">
+          <div class="service-card__icon"><span class="material-icons">apartment</span></div>
+          <h3 class="service-card__title">Композит</h3>
+          <p class="service-card__desc">Алюминиевый композитный материал (АКП). Толщина до 6 мм.</p>
+        </div>
+        <div class="service-card fade-up">
+          <div class="service-card__icon"><span class="material-icons">view_week</span></div>
+          <h3 class="service-card__title">Оргстекло</h3>
+          <p class="service-card__desc">Прозрачное, матовое, цветное. Толщина до 20 мм.</p>
+        </div>
+        <div class="service-card fade-up">
+          <div class="service-card__icon"><span class="material-icons">grid_on</span></div>
+          <h3 class="service-card__title">ПВХ</h3>
+          <p class="service-card__desc">ПеноПВХ и твёрдый ПВХ. Лёгкий, прочный, бюджетный. Толщина до 20 мм.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="container" style="text-align:center;">
+      <div class="section__header" style="text-align:center;">
+        <p class="overline" style="justify-content:center;"><span class="material-icons icon-xs">mail</span> Готовы начать?</p>
+        <h2 class="section__title">Закажите расчёт стоимости</h2>
+        <p class="section__sub" style="margin:0 auto;">Прикрепите чертёж и укажите параметры — мы вернёмся с ценой в течение часа</p>
+      </div>
+      <div style="display:flex; gap:var(--sp-3); justify-content:center; flex-wrap:wrap; margin-top:var(--sp-6);">
+        <a href="../kontakty/index.html" class="btn btn--primary btn--xl btn--round">
+          <span class="material-icons icon-sm">send</span> Оставить заявку
+        </a>
+        <a href="tel:+74951234567" class="btn btn--gray btn--xl btn--round">
+          <span class="material-icons icon-sm">call</span> +7 (495) 123-45-67
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="app-footer"></div>
+
+<script src="../js/templates.js"></script>
+<script src="../js/main.js"></script>
+<script>
+  document.getElementById('breadcrumbs-root').innerHTML = renderBreadcrumbs([
+    { href: 'index.html', label: 'Главная' },
+    { label: 'Услуги' }
+  ]);
+  initApp('uslugi/index.html');
+</script>
+</body>
+</html>

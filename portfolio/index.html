@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Портфолио — ProFreza24</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div id="app-header"></div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div id="breadcrumbs"></div>
+    <h1 class="page-hero__title">Портфолио</h1>
+    <p class="page-hero__sub">Реальные проекты для наших клиентов — от мелких тиражей до крупных производственных заказов</p>
+  </div>
+</section>
+
+<!-- FILTERS -->
+<section class="section" style="padding-bottom:0;">
+  <div class="container">
+    <div class="price-tabs" id="portfolioFilters">
+      <button class="price-tab active" data-filter="all">Все работы</button>
+      <button class="price-tab" data-filter="frezerovka">
+        <span class="material-icons icon-xs">settings</span> Фрезеровка
+      </button>
+      <button class="price-tab" data-filter="lazer">
+        <span class="material-icons icon-xs">bolt</span> Лазер
+      </button>
+      <button class="price-tab" data-filter="uv">
+        <span class="material-icons icon-xs">print</span> УФ-печать
+      </button>
+      <button class="price-tab" data-filter="3d">
+        <span class="material-icons icon-xs">3d_rotation</span> 3D
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO GRID -->
+<section class="section">
+  <div class="container">
+    <div class="portfolio-grid" id="portfolioGrid">
+
+      <!-- Фрезеровка 1 -->
+      <div class="portfolio-card fade-up" data-category="frezerovka">
+        <div class="portfolio-card__img">
+          <span class="material-icons">image</span>
+        </div>
+        <div class="portfolio-card__info">
+          <span class="chip chip--primary"><span class="material-icons icon-xs">settings</span> Фрезеровка</span>
+          <h4 class="portfolio-card__title">Вывески для ресторана</h4>
+          <p class="portfolio-card__meta">Фанера 12 мм · Тираж 15 шт.</p>
+          <p class="portfolio-card__desc">Клиент: рекламное агентство «БрендМастер». Вывески для сети из 15 ресторанов. Фрезеровка с последующей покраской.</p>
+        </div>
+      </div>
+
+      <!-- Фрезеровка 2 -->
+      <div class="portfolio-card fade-up" data-category="frezerovka">
+        <div class="portfolio-card__img">
+          <span class="material-icons">image</span>
+        </div>
+        <div class="portfolio-card__info">
+          <span class="chip chip--primary"><span class="material-icons icon-xs">settings</span> Фрезеровка</span>
+          <h4 class="portfolio-card__title">Упаковка для косметики</h4>
+          <p class="portfolio-card__meta">МДФ 6 мм · Тираж 200 шт.</p>
+          <p class="portfolio-card__desc">Клиент: косметическая компания. Индивидуальная упаковка для премиальной линейки средств по уходу.</p>
+        </div>
+      </div>
+
+      <!-- Фрезеровка 3 -->
+      <div class="portfolio-card fade-up" data-category="frezerovka">
+        <div class="portfolio-card__img">
+          <span class="material-icons">image</span>
+        </div>
+        <div class="portfolio-card__info">
+          <span class="chip chip--primary"><span class="material-icons icon-xs">settings</span> Фрезеровка</span>
+          <h4 class="portfolio-card__title">Декоративные панели для отеля</h4>
+          <p class="portfolio-card__meta">АБС 4 мм · Тираж 40 шт.</p>
+          <p class="portfolio-card__desc">Клиент: строительная подрядная организация. Панели для холла отеля — геометрический паттерн.</p>
+        </div>
+      </div>
+
+      <!-- Лазер 1 -->
+      <div class="portfolio-card fade-up" data-category="lazer">
+        <div class="portfolio-card__img">
+          <span class="material-icons">image</span>
+        </div>
+        <div class="portfolio-card__info">
+          <span class="chip chip--primary"><span class="material-icons icon-xs">bolt</span> Лазер</span>
+          <h4 class="portfolio-card__title">Декоративные перегородки</h4>
+          <p class="portfolio-card__meta">Композит 4 мм · Тираж 8 шт.</p>
+          <p class="portfolio-card__desc">Клиент: дизайн-студия «АртПроект». Перегородки для офиса IT-компании — узор «Мозаика».</p>
+        </div>
+      </div>
+
+      <!-- Лазер 2 -->
+      <div class="portfolio-card fade-up" data-category="lazer">
+        <div class="portfolio-card__img">
+          <span class="material-icons">image</span>
+        </div>
+        <div class="portfolio-card__info">
+          <span class="chip chip--primary"><span class="material-icons icon-xs">bolt</span> Лазер</span>
+          <h4 class="portfolio-card__title">Логотипы для выставки</h4>
+          <p class="portfolio-card__meta">Акрил 10 мм · Тираж 12 шт.</p>
+          <p class="portfolio-card__desc">Клиент: выставка «Реклама-Экспо». Срочный заказ — объёмные логотипы для стендов.</p>
+        </div>
+      </div>
+
+      <!-- Лазер 3 -->
+      <div class="portfolio-card fade-up" data-category="lazer">
+        <div class="portfolio-card__img">
+          <span class="material-icons">image</span>
+        </div>
+        <div class="portfolio-card__info">
+          <span class="chip chip--primary"><span class="material-icons icon-xs">bolt</span> Лазер</span>
+          <h4 class="portfolio-card__title">Элементы интерьера</h4>
+          <p class="portfolio-card__meta">Фанера 6 мм · Тираж 25 шт.</p>
+          <p class="portfolio-card__desc">Клиент: мастерская «Древо». Декоративные элементы для мебели — цветочные мотивы.</p>
+        </div>
+      </div>
+
+      <!-- УФ 1 -->
+      <div class="portfolio-card fade-up" data-category="uv">
+        <div class="portfolio-card__img">
+          <span class="material-icons">image</span>
+        </div>
+        <div class="portfolio-card__info">
+          <span class="chip chip--primary"><span class="material-icons icon-xs">print</span> УФ-печать</span>
+          <h4 class="portfolio-card__title">Таблички для офиса</h4>
+          <p class="portfolio-card__meta">Оргстекло 5 мм · Тираж 40 шт.</p>
+          <p class="portfolio-card__desc">Клиент: бизнес-центр «Горизонт». Таблички на кабинеты и указатели — полная навигация.</p>
+        </div>
+      </div>
+
+      <!-- УФ 2 -->
+      <div class="portfolio-card fade-up" data-category="uv">
+        <div class="portfolio-card__img">
+          <span class="material-icons">image</span>
+        </div>
+        <div class="portfolio-card__info">
+          <span class="chip chip--primary"><span class="material-icons icon-xs">print</span> УФ-печать</span>
+          <h4 class="portfolio-card__title">Наружная реклама</h4>
+          <p class="portfolio-card__meta">Композит 4 мм · Тираж 6 шт.</p>
+          <p class="portfolio-card__desc">Клиент: сеть магазинов «ЦветМир». Баннеры для фасадов — УФ-печать с защитным лаком.</p>
+        </div>
+      </div>
+
+      <!-- 3D 1 -->
+      <div class="portfolio-card fade-up" data-category="3d">
+        <div class="portfolio-card__img">
+          <span class="material-icons">image</span>
+        </div>
+        <div class="portfolio-card__info">
+          <span class="chip chip--primary"><span class="material-icons icon-xs">3d_rotation</span> 3D</span>
+          <h4 class="portfolio-card__title">Архитектурный макет</h4>
+          <p class="portfolio-card__meta">ПВХ 20 мм · 1 шт.</p>
+          <p class="portfolio-card__desc">Клиент: архитектурное бюро «Проект». Макет жилого комплекса в масштабе 1:200.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section--surface">
+  <div class="container" style="text-align:center;">
+    <h2 class="section__title">Обсудите свой проект</h2>
+    <p class="section__sub">Пришлите чертёж — мы рассчитаем стоимость и сроки</p>
+    <a href="../kontakty/index.html" class="btn btn--primary btn--xl btn--round" style="margin-top:var(--sp-2);">
+      <span class="material-icons icon-sm">send</span> Отправить чертёж
+    </a>
+  </div>
+</section>
+
+<div id="app-footer"></div>
+
+<script src="../js/templates.js"></script>
+<script src="../js/main.js"></script>
+<script>
+  initApp('portfolio/index.html');
+  document.getElementById('breadcrumbs').innerHTML = renderBreadcrumbs([
+    { href: 'index.html', label: 'Главная' },
+    { label: 'Портфолио' }
+  ]);
+</script>
+</body>
+</html>
